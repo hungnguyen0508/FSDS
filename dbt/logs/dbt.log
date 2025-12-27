@@ -1,0 +1,30 @@
+[0m17:11:41.727976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75288b2a5e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75288b265990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75288e037410>]}
+
+
+============================== 17:11:41.731002 | 60264339-02c1-4167-9991-26b3b5ce9525 ==============================
+[0m17:11:41.731002 [info ] [MainThread]: Running with dbt=1.10.11
+[0m17:11:41.731462 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'profiles_dir': '/home/hung-nguyen/.dbt', 'target_path': 'None', 'use_experimental_parser': 'False', 'log_format': 'default', 'no_print': 'None', 'indirect_selection': 'eager', 'invocation_command': 'dbt init', 'introspect': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'quiet': 'False', 'printer_width': '80', 'static_parser': 'True', 'warn_error': 'None', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'cache_selected_only': 'False', 'empty': 'None', 'write_json': 'True'}
+[0m17:11:51.479457 [debug] [MainThread]: Starter project path: /home/hung-nguyen/anaconda3/envs/final_project/lib/python3.11/site-packages/dbt/include/starter_project
+[0m17:11:51.484858 [info ] [MainThread]: 
+Your new dbt project "football_prediction" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:11:51.486302 [info ] [MainThread]: Setting up your profile.
+[0m17:12:43.003023 [info ] [MainThread]: Profile football_prediction written to /home/hung-nguyen/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:12:43.010492 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 61.321774, "process_in_blocks": "120408", "process_kernel_time": 0.27496, "process_mem_max_rss": "106112", "process_out_blocks": "80", "process_user_time": 0.942143}
+[0m17:12:43.011185 [debug] [MainThread]: Command `dbt init` succeeded at 17:12:43.011073 after 61.32 seconds
+[0m17:12:43.011677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75288b6ffc90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75288fa17650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75288f97b410>]}
+[0m17:12:43.012337 [debug] [MainThread]: Flushing usage events
+[0m17:12:43.488150 [debug] [MainThread]: An error was encountered while trying to flush usage events

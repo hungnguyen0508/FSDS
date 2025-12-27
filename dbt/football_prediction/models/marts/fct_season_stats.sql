@@ -7,6 +7,6 @@ select
     sum(home_team_yellow_cards) + sum(away_team_yellow_cards) as total_yellow_cards,
     sum(home_team_red_cards) + sum(away_team_red_cards) as total_red_cards,
     avg(home_team_yellow_cards) + avg(away_team_yellow_cards) as yellow_cards_per_match,
-    avg(home_team_red_cards) + avg(away_team_red_cards) as red_cards_per_match,
-from {{ ref(fact_match_result)}} 
+    avg(home_team_red_cards) + avg(away_team_red_cards) as red_cards_per_match
+from {{ ref('int_fct_match_result')}} 
 group by season

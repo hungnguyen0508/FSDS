@@ -23,113 +23,123 @@ class Match(Base):
     __tablename__ = "matches"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    Div: Mapped[str] = mapped_column(String)
-    Date: Mapped[date] = mapped_column(nullable=False)
-    HomeTeam: Mapped[str] = mapped_column(nullable=False)
-    AwayTeam: Mapped[str] = mapped_column(nullable=False)
-    FTHG: Mapped[int] = mapped_column(Integer,nullable=False)
-    FTAG: Mapped[int] = mapped_column(Integer,nullable=False)
-    FTR: Mapped[str] = mapped_column(String(1),nullable=False)
-    HTHG: Mapped[int] = mapped_column(Integer,nullable=False)
-    HTAG: Mapped[int] = mapped_column(Integer,nullable=False)
-    HTR: Mapped[str] = mapped_column(String(1),nullable=True)
-    Attendance: Mapped[float] = mapped_column(Float,nullable=True)
-    Referee: Mapped[str] = mapped_column(String,nullable=True)
-    HS: Mapped[int] = mapped_column(Integer,nullable=True)
-    AS: Mapped[int] = mapped_column(Integer,nullable=True)
-    HST: Mapped[int] = mapped_column(Integer,nullable=True)
-    AST: Mapped[int] = mapped_column(Integer,nullable=True)
-    HHW: Mapped[int] = mapped_column(Integer,nullable=True)
-    AHW: Mapped[int] = mapped_column(Integer,nullable=True)
-    HC: Mapped[int] = mapped_column(Integer,nullable=True)
-    AC: Mapped[int] = mapped_column(Integer,nullable=True)
-    HF: Mapped[int] = mapped_column(Integer,nullable=True)
-    AF: Mapped[int] = mapped_column(Integer,nullable=True)
-    HY: Mapped[int] = mapped_column(Integer,nullable=True)
-    AY: Mapped[int] = mapped_column(Integer,nullable=True)
-    HR: Mapped[int] = mapped_column(Integer,nullable=True)
-    AR: Mapped[int] = mapped_column(Integer,nullable=True)
+    season: Mapped[str] = mapped_column(String)
+    div: Mapped[str] = mapped_column(String)
+    match_date: Mapped[date] = mapped_column(nullable=False)
+    hometeam: Mapped[str] = mapped_column(String, nullable=False)
+    awayteam: Mapped[str] = mapped_column(String, nullable=False)
+    fthg: Mapped[int] = mapped_column(Integer, nullable=False)
+    ftag: Mapped[int] = mapped_column(Integer, nullable=False)
+    ftr: Mapped[str] = mapped_column(String(1), nullable=False)
+    hthg: Mapped[int] = mapped_column(Integer, nullable=False)
+    htag: Mapped[int] = mapped_column(Integer, nullable=False)
+    htr: Mapped[str] = mapped_column(String(1), nullable=True)
+    attendance: Mapped[float] = mapped_column(Float, nullable=True)
+    referee: Mapped[str] = mapped_column(String, nullable=True)
+    hsh: Mapped[int] = mapped_column(Integer, nullable=True)
+    ash: Mapped[int] = mapped_column(Integer, nullable=True)  # 'as' là từ khóa SQL
+    hst: Mapped[int] = mapped_column(Integer, nullable=True)
+    ast: Mapped[int] = mapped_column(Integer, nullable=True)
+    hhw: Mapped[int] = mapped_column(Integer, nullable=True)
+    ahw: Mapped[int] = mapped_column(Integer, nullable=True)
+    hc: Mapped[int] = mapped_column(Integer, nullable=True)
+    ac: Mapped[int] = mapped_column(Integer, nullable=True)
+    hf: Mapped[int] = mapped_column(Integer, nullable=True)
+    af: Mapped[int] = mapped_column(Integer, nullable=True)
+    hy: Mapped[int] = mapped_column(Integer, nullable=True)
+    ay: Mapped[int] = mapped_column(Integer, nullable=True)
+    hr: Mapped[int] = mapped_column(Integer, nullable=True)
+    ar: Mapped[int] = mapped_column(Integer, nullable=True)
 
     __table_args__ = (
-        UniqueConstraint("Date", "HomeTeam", "AwayTeam", "Div"),)
+        UniqueConstraint("match_date", "hometeam", "awayteam", "div"),
+    )
+
 Base.metadata.create_all(engine)
 
-def date_adjusted(date_column: str) -> date:
+
+# helper function to change date type of date column
+def date_adjusted(date_column: str):
     d, m, y = date_column.split("/")
     if len(y) == 2:
         y = int(y) + 2000
     return date(int(y), int(m), int(d))
 
+
 # load each csv file into postgres 
 def data_ingestion(dir: str):
     session = SessionLocal()
-
-    for file in os.listdir(dir):
-        if re.match(r"\d{4}-\d{2}\.csv", file): # check condition for each csv. 
-            df = pd.read_csv(f"{dir}/{file}") 
-
+    files = os.listdir(dir)
+    files.sort()
+    for file in files:
+        if re.match(r"\d{4}-\d{2}\.csv", file):
+            df = pd.read_csv(f"{dir}/{file}")
+            ss = file.split(".")[0]  # get the season
             df["Date"] = df["Date"].apply(date_adjusted)
 
             for _, row in df.iterrows():
-                # prepare to insert column
                 stmt = insert(Match).values(
-                    Div=row.get("Div"),
-                    Date=row["Date"],
-                    HomeTeam=row["HomeTeam"],
-                    AwayTeam=row["AwayTeam"],
-                    FTHG=row.get("FTHG"),
-                    FTAG=row.get("FTAG"),
-                    FTR=row.get("FTR"),
-                    HTHG=row.get("HTHG"),
-                    HTAG=row.get("HTAG"),
-                    HTR=row.get("HTR"),
-                    Attendance=row.get("Attendance"),
-                    Referee=row.get("Referee"),
-                    HS=row.get("HS"),
-                    AS=row.get("AS"),
-                    HST=row.get("HST"),
-                    AST=row.get("AST"),
-                    HHW=row.get("HHW"),
-                    AHW=row.get("AHW"),
-                    HC=row.get("HC"),
-                    AC=row.get("AC"),
-                    HF=row.get("HF"),
-                    AF=row.get("AF"),
-                    HY=row.get("HY"),
-                    AY=row.get("AY"),
-                    HR=row.get("HR"),
-                    AR=row.get("AR"),
+                    season=ss,
+                    div=row.get("Div"),
+                    match_date=row["Date"],
+                    hometeam=row["HomeTeam"],
+                    awayteam=row["AwayTeam"],
+                    fthg=row.get("FTHG"),
+                    ftag=row.get("FTAG"),
+                    ftr=row.get("FTR"),
+                    hthg=row.get("HTHG"),
+                    htag=row.get("HTAG"),
+                    htr=row.get("HTR"),
+                    attendance=row.get("Attendance"),
+                    referee=row.get("Referee"),
+                    hsh=row.get("HS"),
+                    ash=row.get("AS"),
+                    hst=row.get("HST"),
+                    ast=row.get("AST"),
+                    hhw=row.get("HHW"),
+                    ahw=row.get("AHW"),
+                    hc=row.get("HC"),
+                    ac=row.get("AC"),
+                    hf=row.get("HF"),
+                    af=row.get("AF"),
+                    hy=row.get("HY"),
+                    ay=row.get("AY"),
+                    hr=row.get("HR"),
+                    ar=row.get("AR"),
                 )
 
-                # Upsert data. 
+                # Upsert data
                 stmt = stmt.on_conflict_do_update(
-                    index_elements=["Date", "HomeTeam", "AwayTeam", "Div"],
+                    index_elements=["match_date", "hometeam", "awayteam", "div"],
                     set_={
-                        "FTHG": stmt.excluded.FTHG,
-                        "FTAG": stmt.excluded.FTAG,
-                        "FTR": stmt.excluded.FTR,
-                        "HTHG": stmt.excluded.HTHG,
-                        "HTAG": stmt.excluded.HTAG,
-                        "HTR": stmt.excluded.HTR,
-                        "Attendance": stmt.excluded.Attendance,
-                        "Referee": stmt.excluded.Referee,
-                        "HS": stmt.excluded.HS,
-                        "AS": stmt.excluded.AS,
-                        "HST": stmt.excluded.HST,
-                        "AST": stmt.excluded.AST,
-                        "HY": stmt.excluded.HY,
-                        "AY": stmt.excluded.AY,
-                        "HR": stmt.excluded.HR,
-                        "AR": stmt.excluded.AR,
+                        "fthg": stmt.excluded.fthg,
+                        "ftag": stmt.excluded.ftag,
+                        "ftr": stmt.excluded.ftr,
+                        "hthg": stmt.excluded.hthg,
+                        "htag": stmt.excluded.htag,
+                        "htr": stmt.excluded.htr,
+                        "attendance": stmt.excluded.attendance,
+                        "referee": stmt.excluded.referee,
+                        "hsh": stmt.excluded.hsh,
+                        "ash": stmt.excluded.ash,
+                        "hst": stmt.excluded.hst,
+                        "ast": stmt.excluded.ast,
+                        "hy": stmt.excluded.hy,
+                        "ay": stmt.excluded.ay,
+                        "hr": stmt.excluded.hr,
+                        "ar": stmt.excluded.ar,
                     }
                 )
                 session.execute(stmt)
 
-
     session.commit()
-
     session.close()
 
 
 if __name__ == "__main__":
-    data_ingestion("/home/hung-nguyen/Downloads/final_project/raw_data")
+    input_dir = str(input("Give me link nowwww: "))
+    try:
+        data_ingestion(input_dir)
+        print("Yayyy successfully!")
+    except Exception as e:
+        raise ValueError(e)

@@ -6,6 +6,21 @@ sources:
     tables: 
       - name: matches
         description: "Information for each match from 2000 to 2019"
+        columns: 
+          - name: id
+            description: "Auto incremental."
+            tests:
+              - unique
+              - not_null
+          - name: hometeam
+            description: "home team"
+            tests:
+              - not_null
+          - name: awayteam
+            description: "away team"
+            tests:
+              - not_null
 
       - name: EPLStandings
         description: "Standing of each team at the end of the season from 2000 to 2015"
+        

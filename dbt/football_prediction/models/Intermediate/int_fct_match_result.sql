@@ -32,7 +32,7 @@ select
 
 
 from {{ ref('stg_match_result') }} m 
-join {{ ref('int_dim_referees')}} r on m."Referee" = r.referee
+join {{ ref('int_dim_referees')}} r on m.referee = r.referee
 join {{ ref('int_dim_teams')}} t on m.home_team = t.team
 join {{ ref('int_dim_teams')}} t2 on m.away_team = t2.team
  
