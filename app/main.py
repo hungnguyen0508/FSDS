@@ -16,14 +16,17 @@ def get_db():
     finally: 
         db.close()
 
+# first browse
 @app.get("/") 
 async def root(): 
     return f"Welcome to EPL stat"
 
+# routing to /season
 @app.get("/season") 
 async def season(): 
     return f"give me the season you want to get the statistics"
 
+# season stats
 @app.get("/season/{season}")
 async def get_season_stat(season:str, db:Session = Depends(get_db)): 
     season_stat = get_season(db, season)
@@ -31,10 +34,12 @@ async def get_season_stat(season:str, db:Session = Depends(get_db)):
         raise HTTPException(status_code = 404, detail = "Season not found")
     return season_stat 
 
+# routing to /team/recent_performance
 @app.get("/team/recent_performance") 
 async def season(): 
     return f"give me the team you want to view recent performance"
 
+# team recent performance
 @app.get("/team/recent_performance/{team}")
 async def get_team_form(team:int, db:Session = Depends(get_db)): 
     team_performance = get_team_form(db, team)

@@ -15,6 +15,7 @@ class SeasonStat(Base):
     yellow_cards_per_match:Mapped[float]=mapped_column(Float)
     red_cards_per_match:Mapped[str]=mapped_column(Float)
 
+# create team_recent_form class aka table based on Base. 
 class team_recent_form(Base): 
     __tablename__ = "fct_team_recent_form"
     table_args__ = {"schema":"public_gold"}
