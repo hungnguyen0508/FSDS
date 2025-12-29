@@ -24,3 +24,5 @@ sources:
       - name: EPLStandings
         description: "Standing of each team at the end of the season from 2000 to 2015"
         
+      - name: clubs
+        description: "information about club"

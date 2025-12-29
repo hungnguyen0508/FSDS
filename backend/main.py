@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 from models import Base, SeasonStat
-from crud import get_season, get_team_recent_form, get_team
+from crud import get_season, get_team_recent_form, get_team, get_head_to_head
 import uvicorn
 
 app = FastAPI()
@@ -19,12 +19,12 @@ def get_db():
 # first browse
 @app.get("/") 
 async def root(): 
-    return f"Welcome to EPL stat"
+    return {"message": f"Welcome to EPL stat"}
 
 # routing to /season
 @app.get("/season") 
 async def season(): 
-    return f"give me the season you want to get the statistics"
+    return {"message": f"data is available for seasons from 2000 to 2020"}
 
 # season stats
 @app.get("/season/{season}")
@@ -41,10 +41,19 @@ async def season(db:Session=Depends(get_db)):
 
 # team recent performance
 @app.get("/team/recent_performance/{team}")
-async def get_team_form(team:int, db:Session = Depends(get_db)): 
+async def get_team_form(team:str, db:Session = Depends(get_db)): 
     team_performance = get_team_recent_form(db, team)
     if team_performance is None: 
         raise HTTPException(status_code = 404, detail = "Team not found")
     return team_performance 
+
+# head to head
+@app.get("/team/head_to_head")
+async def head_to_head(first_team: int, second_team:int, db:Session = Depends(get_db)): 
+    h2h = get_head_to_head(db, first_team, second_team)
+    if h2h is None: 
+        raise HTTPException(status_code = 404, detail = "Team not found")
+    return h2h
+
 if __name__ == "__main__": 
     uvicorn.run(app, host = "0.0.0.0", port = 8080)
