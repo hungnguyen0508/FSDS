@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 from models import Base, SeasonStat
-from crud import get_season, get_team_recent_form
+from crud import get_season, get_team_recent_form, get_team
 import uvicorn
 
 app = FastAPI()
@@ -36,13 +36,13 @@ async def get_season_stat(season:str, db:Session = Depends(get_db)):
 
 # routing to /team/recent_performance
 @app.get("/team/recent_performance") 
-async def season(): 
-    return f"give me the team you want to view recent performance"
+async def season(db:Session=Depends(get_db)): 
+    return get_team(db)
 
 # team recent performance
 @app.get("/team/recent_performance/{team}")
 async def get_team_form(team:int, db:Session = Depends(get_db)): 
-    team_performance = get_team_form(db, team)
+    team_performance = get_team_recent_form(db, team)
     if team_performance is None: 
         raise HTTPException(status_code = 404, detail = "Team not found")
     return team_performance 

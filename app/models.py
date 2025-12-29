@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import Mapped, mapped_column
 from database import Base
-
+from datetime import date
 
 # create SeasonStat class aka table based on Base. 
 class SeasonStat(Base): 
@@ -18,12 +18,19 @@ class SeasonStat(Base):
 # create team_recent_form class aka table based on Base. 
 class team_recent_form(Base): 
     __tablename__ = "fct_team_recent_form"
-    table_args__ = {"schema":"public_gold"}
+    __table_args__ = {"schema":"public_gold"}
     team:Mapped[int] = mapped_column(Integer, primary_key=True)
-    match_date:Mapped[str] = mapped_column(String)
+    match_date: Mapped[date] = mapped_column(nullable=False)
     goals_for_last_5:Mapped[int] = mapped_column(Integer)
     goals_against_last_5:Mapped[int] = mapped_column(Integer)
     wins_last_5:Mapped[int] = mapped_column(Integer)
     draws_last_5:Mapped[int] = mapped_column(Integer)
     losses_last_5:Mapped[int] = mapped_column(Integer)
     number:Mapped[int] = mapped_column(Integer)
+
+class team(Base): 
+    __tablename__ = "int_dim_teams"
+    __table_args__ = {"schema":"public_silver"}
+    id:Mapped[int]=mapped_column(Integer, primary_key=True)
+    team:Mapped[str]=mapped_column(String)
+
