@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+from pathlib import Path
 
 # ===== PAGE CONFIG (PHẢI ĐẶT ĐẦU TIÊN) =====
 st.set_page_config(
@@ -11,13 +12,18 @@ st.set_page_config(
 
 
 # ===== LOAD IMAGE =====
-logo = Image.open("/home/hung-nguyen/Downloads/final_project/relevant_resources/Premier-League-Logo.png")
+logo = Image.open(f"./relevant_resources/Premier-League-Logo.png")
+rooney = Image.open("./relevant_resources/rooney.jpg")
+aguero = Image.open("./relevant_resources/aguero.jpg")
+arteta = Image.open("./relevant_resources/arteta.jpg")
+gerard = Image.open("./relevant_resources/gerard.jpg")
+
 
 # ===== HEADER =====
 col1, col2 = st.columns([1, 4])
 
 with col1:
-    st.image(logo, use_container_width=True)
+    st.image(logo, width="stretch")
 
 with col2:
     st.title("English Premier League Statistics")
@@ -94,14 +100,13 @@ st.divider()
 # ===== IMAGE =====
 col1, col2, col3, col4 = st.columns(4)
 with col1: 
-    st.image("/home/hung-nguyen/Downloads/final_project/relevant_resources/rooney.jpg")
+    st.image(rooney)
 with col2: 
-    st.image("/home/hung-nguyen/Downloads/final_project/relevant_resources/aguero.jpg")
+    st.image(aguero)
 with col3: 
-    st.image("/home/hung-nguyen/Downloads/final_project/relevant_resources/arteta.jpg")
-    st.image("/home/hung-nguyen/Downloads/final_project/relevant_resources/aguero.jpg")
+    st.image(arteta)
 with col4: 
-    st.image("/home/hung-nguyen/Downloads/final_project/relevant_resources/gerard.jpg")
+    st.image(gerard)
 
 
 
@@ -123,6 +128,11 @@ st.markdown(
 
 st.divider()
 
+
+pg = st.navigation(["1_season.py","2_team.py"])
+pg.run()
+
+
 # ===== FOOTER =====
 st.markdown(
     """
@@ -130,4 +140,3 @@ st.markdown(
     *Powered by historical EPL data (2000–2020).*
     """
 )
-
