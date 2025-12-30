@@ -1,6 +1,22 @@
 from sqlalchemy import or_, and_, desc
 from sqlalchemy.orm import Session
 from models import SeasonStat, team_recent_form,team,match_result
+from helper_stat import latest_season
+import re 
+
+# Create a stat in season stat talbe 
+def create_season(db:Session,season:str, spectator:float, goals_per_match: float, tot_yc:int, tot_rc:int, yc_per_match:float, rc_per_match:float):
+    last_season = latest_season(db)
+    if re.match(r"\d{4}-\d{2}", season) and last_season < season: # only create new season
+        new_season = SeasonStat(season = season, average_spectator = spectator, average_goals_per_match = goals_per_match, total_yellow_cards = tot_yc, total_red_cards = tot_rc, yellow_cards_per_match = yc_per_match, red_cards_per_match = rc_per_match)
+        db.add(new_season)
+        db.commit()
+        db.refresh(SeasonStat)
+        return True
+    else: 
+
+        return {last_season}
+
 
 # read operation to get the stat of a particular season
 def get_season(db:Session, season:str): 

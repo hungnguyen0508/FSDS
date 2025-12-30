@@ -11,5 +11,4 @@ class SeasonStat(BaseModel):
     yellow_cards_per_match: float
     red_cards_per_match: float
 
-    class Config: 
-        orm_mode = True
+
