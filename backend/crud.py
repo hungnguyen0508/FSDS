@@ -38,6 +38,42 @@ def delete_match(db:Session, data:dict):
         db.delete(db_match)
         db.commit()
         return True, f"Match deleted successfully"
+    
+# update match from source
+def update_match(db:Session, data:dict): 
+    db_match = db.query(src_match_result).filter(
+                                            and_(
+                                            src_match_result.match_date == data.match_date,
+                                            src_match_result.hometeam == data.home_team,
+                                            src_match_result.awayteam == data.away_team
+                                        )).first()
+    if db_match is None: 
+        return False, f"Match not found to update"
+    else: 
+        db_match.fthg = data.fthg
+        db_match.ftag = data.ftag
+        db_match.ftr = data.ftr
+        db_match.hthg = data.hthg
+        db_match.htag = data.htag
+        db_match.htr = data.htr
+        db_match.attendance = data.attendance
+        db_match.referee = data.referee
+        db_match.hsh = data.hsh
+        db_match.ash = data.ash
+        db_match.hst = data.hst 
+        db_match.ast = data.ast 
+        db_match.hhw = data.hhw
+        db_match.ahw = data.ahw
+        db_match.hc = data.hc
+        db_match.ac = data.ac
+        db_match.hf = data.hf
+        db_match.af = data.af
+        db_match.hy = data.hy
+        db_match.ay = data.ay
+        db_match.hr = data.hr 
+        db_match.ar = data.ar 
+        db.commit()
+        return True, "Match updated successfully"
 
 # create new match into source
 def create_match(db:Session, data:dict):

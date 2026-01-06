@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 from models import Base
 from schema import Matchresult, MatchIdentity
-from crud import get_season, get_team_recent_form, get_team, get_head_to_head, create_match, delete_match
+from crud import get_season, get_team_recent_form, get_team, get_head_to_head, create_match, delete_match, update_match
 from datetime import datetime 
 import logging
 from logging.config import dictConfig
@@ -85,9 +85,9 @@ async def root():
     return {"message": f"Welcome to EPL stat"}
 
 
-# Update historic match result
+# Create historic match result
 @app.post("/match_result/",status_code = 201)
-async def match_result(post_obj:Matchresult, db:Session = Depends(get_db)): 
+async def post_result(post_obj:Matchresult, db:Session = Depends(get_db)): 
         logger.info(f"Match result created for date {post_obj.match_date}")
         success, result = create_match(db, post_obj)
         if success: 
@@ -105,6 +105,16 @@ async def del_match(del_obj : MatchIdentity, db:Session = Depends(get_db)):
     success, result = delete_match(db, del_obj)
     if success: 
         logger.info(f"Successfully deleted match on {del_obj.match_date} between {del_obj.home_team} vs {del_obj.away_team}")
+        return {"message": result}
+    raise HTTPException(status_code=400, detail = result)
+
+# Update historic match result
+@app.put("/match_result/", status_code=201)
+async def put_match(put_obj:Matchresult, db:Session = Depends(get_db)): 
+    logger.info(f"Update match on {put_obj.match_date} between {put_obj.home_team} vs {put_obj.away_team}")
+    success, result = update_match(db, put_obj)
+    if success: 
+        logger.info(f"Successfully updated match on {put_obj.match_date} between {put_obj.home_team} vs {put_obj.away_team}")
         return {"message": result}
     raise HTTPException(status_code=400, detail = result)
 
