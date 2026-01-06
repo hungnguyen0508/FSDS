@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, Date
 from sqlalchemy.orm import Mapped, mapped_column
 from database import Base
 from datetime import date
@@ -20,7 +20,7 @@ class team_recent_form(Base):
     __tablename__ = "fct_team_recent_form"
     __table_args__ = {"schema":"public_gold"}
     team:Mapped[str] = mapped_column(String, primary_key=True)
-    match_date: Mapped[date] = mapped_column(nullable=False)
+    latest_match_date: Mapped[date] = mapped_column(nullable=False)
     goals_for_last_5:Mapped[int] = mapped_column(Integer)
     goals_against_last_5:Mapped[int] = mapped_column(Integer)
     wins_last_5:Mapped[int] = mapped_column(Integer)
@@ -37,6 +37,43 @@ class team(Base):
     city:Mapped[str]=mapped_column(String)
     stadium:Mapped[str]=mapped_column(String)
     founded:Mapped[str]=mapped_column(String)
+
+
+
+
+# source
+class src_match_result(Base): 
+    __tablename__ = "matches"
+    __table_args__ = {"schema":"public"}
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    season: Mapped[str] = mapped_column(String, nullable = False)
+    div: Mapped[str] = mapped_column(String, nullable = True)
+    match_date: Mapped[date] = mapped_column(Date, nullable=False)
+    hometeam: Mapped[str] = mapped_column(String, nullable=False)
+    awayteam: Mapped[str] = mapped_column(String, nullable=False)
+    fthg: Mapped[str] = mapped_column(String, nullable=False)
+    ftag: Mapped[str] = mapped_column(String, nullable=False)
+    ftr: Mapped[str] = mapped_column(String(1), nullable=False)
+    hthg: Mapped[int] = mapped_column(Integer, nullable=False)
+    htag: Mapped[int] = mapped_column(Integer, nullable=False)
+    htr: Mapped[str] = mapped_column(String(1), nullable=True)
+    attendance: Mapped[float] = mapped_column(Float, nullable=True)
+    referee: Mapped[str] = mapped_column(String, nullable=True)
+    hsh: Mapped[int] = mapped_column(Integer, nullable=True)
+    ash: Mapped[int] = mapped_column(Integer, nullable=True)  
+    hst: Mapped[int] = mapped_column(Integer, nullable=True)
+    ast: Mapped[int] = mapped_column(Integer, nullable=True)
+    hhw: Mapped[int] = mapped_column(Integer, nullable=True)
+    ahw: Mapped[int] = mapped_column(Integer, nullable=True)
+    hc: Mapped[int] = mapped_column(Integer, nullable=True)
+    ac: Mapped[int] = mapped_column(Integer, nullable=True)
+    hf: Mapped[int] = mapped_column(Integer, nullable=True)
+    af: Mapped[int] = mapped_column(Integer, nullable=True)
+    hy: Mapped[int] = mapped_column(Integer, nullable=True)
+    ay: Mapped[int] = mapped_column(Integer, nullable=True)
+    hr: Mapped[int] = mapped_column(Integer, nullable=True)
+    ar: Mapped[int] = mapped_column(Integer, nullable=True)
+
 
 # head to head 
 class match_result(Base): 
@@ -70,10 +107,6 @@ class match_result(Base):
     away_team_yellow_cards: Mapped[int] = mapped_column(Integer, nullable=True)
     home_team_red_cards: Mapped[int] = mapped_column(Integer, nullable=True)
     away_team_red_cards: Mapped[int] = mapped_column(Integer, nullable=True)
-
-
-
-
 
 
 

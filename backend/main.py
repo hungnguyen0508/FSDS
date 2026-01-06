@@ -1,9 +1,11 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
-from models import Base, SeasonStat
-from crud import get_season, get_team_recent_form, get_team, get_head_to_head, create_season
+from models import Base
+from schema import Matchresult, MatchIdentity
+from crud import get_season, get_team_recent_form, get_team, get_head_to_head, create_match, delete_match
 from datetime import datetime 
 import logging
 from logging.config import dictConfig
@@ -65,6 +67,9 @@ dictConfig(log_config)
 
 app = FastAPI()
 
+
+
+
 # Dependency to get DB session
 def get_db(): 
     db = SessionLocal()
@@ -80,15 +85,29 @@ async def root():
     return {"message": f"Welcome to EPL stat"}
 
 
-# updating season stats
-@app.post("/season/", status_code=201)
-async def create_stat(season:str, spectator:float, goals_per_match: float, tot_yc:int, tot_rc:int, yc_per_match:float, rc_per_match:float,db:Session = Depends(get_db)): 
-    logger.info("Season data updated for season {season}")
-    result =  create_season(db, season, spectator, goals_per_match, tot_yc, tot_rc, yc_per_match, rc_per_match)
-    if result is True: 
-        return True
-    else: 
-        raise HTTPException(status_code=404, detail = f"Wrong input for season {result}")
+# Update historic match result
+@app.post("/match_result/",status_code = 201)
+async def match_result(post_obj:Matchresult, db:Session = Depends(get_db)): 
+        logger.info(f"Match result created for date {post_obj.match_date}")
+        success, result = create_match(db, post_obj)
+        if success: 
+            logger.info(f"Match was created successfully between {post_obj.home_team} vs {post_obj.away_team} on {post_obj.match_date}")
+            return {
+                "message": result, 
+            }   
+        raise HTTPException(status_code = 400, detail = result)     
+
+
+# Delete historic match result
+@app.delete("/match_result/",status_code = 204)
+async def del_match(del_obj : MatchIdentity, db:Session = Depends(get_db)): 
+    logger.info(f"Delete match on {del_obj.match_date} between {del_obj.home_team} vs {del_obj.away_team}")
+    success, result = delete_match(db, del_obj)
+    if success: 
+        logger.info(f"Successfully deleted match on {del_obj.match_date} between {del_obj.home_team} vs {del_obj.away_team}")
+        return {"message": result}
+    raise HTTPException(status_code=400, detail = result)
+
 
 # season stats
 @app.get("/season/{season}")

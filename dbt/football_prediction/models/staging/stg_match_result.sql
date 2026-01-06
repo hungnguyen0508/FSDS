@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='incremental',unique_key = [""]) }}
 
 
 select 

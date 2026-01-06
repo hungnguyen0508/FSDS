@@ -31,7 +31,7 @@ rolling_form as (
 latest_form as (
 select 	
     team,
-	match_date,
+	match_date as latest_match_date,
 	goals_for_last_5, 
 	goals_against_last_5, 
 	wins_last_5, 

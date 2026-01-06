@@ -129,9 +129,13 @@ st.markdown(
 st.divider()
 
 
-pg = st.navigation(["1_season.py","2_team.py"])
+pg = st.navigation(["1_season.py","2_team.py","3_match.py"])
 pg.run()
 
+
+
+
+st.divider()
 
 # ===== FOOTER =====
 st.markdown(

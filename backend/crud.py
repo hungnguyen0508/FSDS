@@ -1,21 +1,85 @@
 from sqlalchemy import or_, and_, desc
 from sqlalchemy.orm import Session
-from models import SeasonStat, team_recent_form,team,match_result
-from helper_stat import latest_season
+from models import SeasonStat, team_recent_form, team, src_match_result, match_result
+from helper_stat import latest_date
+from datetime import date, datetime as dt
 import re 
 
-# Create a stat in season stat talbe 
-def create_season(db:Session,season:str, spectator:float, goals_per_match: float, tot_yc:int, tot_rc:int, yc_per_match:float, rc_per_match:float):
+""" # Create a stat in season stat talbe 
+def create_season(db:Session,data:dict):
     last_season = latest_season(db)
-    if re.match(r"\d{4}-\d{2}", season) and last_season < season: # only create new season
-        new_season = SeasonStat(season = season, average_spectator = spectator, average_goals_per_match = goals_per_match, total_yellow_cards = tot_yc, total_red_cards = tot_rc, yellow_cards_per_match = yc_per_match, red_cards_per_match = rc_per_match)
+    if last_season and last_season < data.season: # only create new season
+        new_season = SeasonStat(season = data.season, 
+                                average_spectator = data.spectator, 
+                                average_goals_per_match = data.goals_per_match, 
+                                total_yellow_cards = data.tot_yc, 
+                                total_red_cards = data.tot_rc, 
+                                yellow_cards_per_match = data.yc_per_match, 
+                                red_cards_per_match = data.rc_per_match)
         db.add(new_season)
         db.commit()
-        db.refresh(SeasonStat)
-        return True
+        db.refresh(new_season)
+        return True, new_season
     else: 
 
-        return {last_season}
+        return False """
+
+# delete match result from source
+def delete_match(db:Session, data:dict): 
+    db_match = db.query(src_match_result).filter(
+                                            and_(
+                                            src_match_result.match_date == data.match_date,
+                                            src_match_result.hometeam == data.home_team,
+                                            src_match_result.awayteam == data.away_team
+                                        )).first()
+    if db_match is None: 
+        return False, f"Match not found"
+    else: 
+        db.delete(db_match)
+        db.commit()
+        return True, f"Match deleted successfully"
+
+# create new match into source
+def create_match(db:Session, data:dict):
+    last_date = latest_date(db, data.home_team, data.away_team)
+    if last_date and last_date < data.match_date: 
+        new_match = src_match_result(
+            season = data.season,
+            div = data.division,
+            match_date =  data.match_date, 
+            hometeam =  data.home_team,
+            awayteam =  data.away_team,
+            fthg =  data.fthg,
+            ftag =  data.ftag,
+            ftr = data.ftr,  
+            hthg = data.hthg, 
+            htag = data.htag, 
+            htr = data.htr, 
+            attendance = data.attendance,
+            referee = data.referee, 
+            hsh = data.hsh, 
+            ash = data.ash, 
+            hst = data.hst, 
+            ast = data.ast, 
+            hhw = data.hhw, 
+            ahw = data.ahw, 
+            hc = data.hc, 
+            ac = data.ac, 
+            hf = data.hf, 
+            af = data.af, 
+            hy = data.hy, 
+            ay = data.ay, 
+            hr = data.hr, 
+            ar = data.ar         
+        )
+        db.add(new_match)
+        db.commit()
+        db.refresh(new_match)
+        return True, new_match
+    else: 
+        return False, f"invalid date"
+
+
 
 
 # read operation to get the stat of a particular season
