@@ -37,7 +37,7 @@ class Match(Base):
     attendance: Mapped[float] = mapped_column(Float, nullable=True)
     referee: Mapped[str] = mapped_column(String, nullable=True)
     hsh: Mapped[int] = mapped_column(Integer, nullable=True)
-    ash: Mapped[int] = mapped_column(Integer, nullable=True)  # 'as' là từ khóa SQL
+    ash: Mapped[int] = mapped_column(Integer, nullable=True)  # 'as' is SQL keyword
     hst: Mapped[int] = mapped_column(Integer, nullable=True)
     ast: Mapped[int] = mapped_column(Integer, nullable=True)
     hhw: Mapped[int] = mapped_column(Integer, nullable=True)

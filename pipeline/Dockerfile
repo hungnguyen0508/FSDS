@@ -1,16 +1,9 @@
-From python:3.11.14-slim
+FROM python:3.10-slim
 
-# Go to /app
-WORKDIR /app 
+WORKDIR /app
 
-# Copy requirement.txt from local
-COPY requirements.txt . 
+COPY  . . 
 
-# Install packages needed
 RUN pip install --no-cache-dir -r requirements.txt
 
-#Copy ingest.py to current dir 
-COPY ingest.py . 
-
-# run the file through command 
 CMD ["python", "ingest.py"]
