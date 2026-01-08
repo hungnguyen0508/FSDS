@@ -1,0 +1,139 @@
+{"timestamp": "2025-12-31T16:56:39.893075", "level": "INFO", "logger": "app", "module": "main", "line": 96, "message": "Season data requested for season 2002-03"}
+{"timestamp": "2025-12-31T16:56:59.395056", "level": "INFO", "logger": "app", "module": "main", "line": 96, "message": "Season data requested for season 2003-04"}
+{"timestamp": "2025-12-31T16:57:37.039154", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:57:45.938723", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:57:45.946169", "level": "INFO", "logger": "app", "module": "main", "line": 111, "message": "Performance data requested for team Man Utd"}
+{"timestamp": "2025-12-31T16:57:54.912470", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:57:54.918623", "level": "INFO", "logger": "app", "module": "main", "line": 111, "message": "Performance data requested for team Man United"}
+{"timestamp": "2025-12-31T16:58:30.420180", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:58:30.443386", "level": "INFO", "logger": "app", "module": "main", "line": 120, "message": "Head to head data for 1 and 2"}
+{"timestamp": "2025-12-31T16:58:43.032120", "level": "INFO", "logger": "app", "module": "main", "line": 96, "message": "Season data requested for season 2003-04"}
+{"timestamp": "2025-12-31T16:58:52.491610", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:58:59.928478", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:58:59.935513", "level": "INFO", "logger": "app", "module": "main", "line": 120, "message": "Head to head data for 1 and 2"}
+{"timestamp": "2025-12-31T16:59:07.080660", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:59:07.089295", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:59:16.449860", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:59:16.456417", "level": "INFO", "logger": "app", "module": "main", "line": 111, "message": "Performance data requested for team Man Utd"}
+{"timestamp": "2025-12-31T16:59:21.880312", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:59:21.886926", "level": "INFO", "logger": "app", "module": "main", "line": 111, "message": "Performance data requested for team Man United"}
+{"timestamp": "2025-12-31T16:59:28.462409", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T16:59:28.470221", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:01:27.419427", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:08:04.689362", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:08:31.472100", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:08:35.342916", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:08:35.351600", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:09:38.018818", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:09:41.623452", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:09:41.631497", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:23:09.694343", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:23:14.759291", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:23:21.311401", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:23:27.233778", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:23:56.199460", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:24:00.563141", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:24:53.116187", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:25:00.996163", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:26:17.044678", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:26:21.682294", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T17:26:29.567346", "level": "INFO", "logger": "app", "module": "main", "line": 105, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:20:44.131002", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:20:53.555660", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:20:53.583289", "level": "INFO", "logger": "app", "module": "main", "line": 115, "message": "Performance data requested for team Man United"}
+{"timestamp": "2025-12-31T18:21:00.124317", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:21:17.981608", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:21:52.258039", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:21:52.268941", "level": "INFO", "logger": "app", "module": "main", "line": 124, "message": "Head to head data for 1 and 2"}
+{"timestamp": "2025-12-31T18:21:59.776063", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:22:03.278987", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2025-12-31T18:26:32.471590", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2001-02"}
+{"timestamp": "2025-12-31T18:26:40.745173", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2002-03"}
+{"timestamp": "2025-12-31T18:26:57.884499", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2003-04"}
+{"timestamp": "2025-12-31T18:27:27.155928", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Season data created for season <function season at 0x7728bb194cc0>"}
+{"timestamp": "2026-01-05T23:21:39.088005", "level": "INFO", "logger": "app", "module": "main", "line": 80, "message": "Root endpoint accessed"}
+{"timestamp": "2026-01-05T23:21:52.514135", "level": "INFO", "logger": "app", "module": "main", "line": 80, "message": "Root endpoint accessed"}
+{"timestamp": "2026-01-05T23:22:23.145552", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2001-02"}
+{"timestamp": "2026-01-05T23:22:33.860725", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2002-03"}
+{"timestamp": "2026-01-05T23:22:42.217646", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2004-05"}
+{"timestamp": "2026-01-05T23:23:25.827139", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:23:37.556523", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:24:26.083835", "level": "INFO", "logger": "app", "module": "main", "line": 124, "message": "Head to head data for 1 and 2"}
+{"timestamp": "2026-01-05T23:25:03.815987", "level": "INFO", "logger": "app", "module": "main", "line": 115, "message": "Performance data requested for team Man City"}
+{"timestamp": "2026-01-05T23:30:12.466556", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2022-03"}
+{"timestamp": "2026-01-05T23:30:40.566582", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2003-04"}
+{"timestamp": "2026-01-05T23:30:49.791183", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2005-06"}
+{"timestamp": "2026-01-05T23:30:57.462941", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2004-05"}
+{"timestamp": "2026-01-05T23:31:00.663603", "level": "INFO", "logger": "app", "module": "main", "line": 100, "message": "Season data requested for season 2004-06"}
+{"timestamp": "2026-01-05T23:31:15.999440", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:31:32.766001", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:31:32.772627", "level": "INFO", "logger": "app", "module": "main", "line": 115, "message": "Performance data requested for team Arsenal"}
+{"timestamp": "2026-01-05T23:34:42.824988", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:34:51.069281", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:34:51.077286", "level": "INFO", "logger": "app", "module": "main", "line": 115, "message": "Performance data requested for team Man City"}
+{"timestamp": "2026-01-05T23:35:01.091673", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:05.519459", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:05.527103", "level": "INFO", "logger": "app", "module": "main", "line": 124, "message": "Head to head data for 1 and 2"}
+{"timestamp": "2026-01-05T23:35:10.690529", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:13.017472", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:13.024899", "level": "INFO", "logger": "app", "module": "main", "line": 124, "message": "Head to head data for 3 and 4"}
+{"timestamp": "2026-01-05T23:35:19.806022", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:19.813811", "level": "INFO", "logger": "app", "module": "main", "line": 124, "message": "Head to head data for 3 and 6"}
+{"timestamp": "2026-01-05T23:35:23.234298", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:29.984459", "level": "INFO", "logger": "app", "module": "main", "line": 109, "message": "list all teams"}
+{"timestamp": "2026-01-05T23:35:29.991941", "level": "INFO", "logger": "app", "module": "main", "line": 124, "message": "Head to head data for 2 and 4"}
+{"timestamp": "2026-01-06T01:07:38.547585", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:08:59.200381", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:09:20.601144", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:11:33.628633", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:13:32.652661", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:14:59.094072", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:18:01.620717", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:20:04.050379", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:21:12.892466", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:23:10.655329", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:24:41.534278", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T01:25:24.576473", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T02:01:24.033952", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T02:02:32.535926", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T11:47:32.423935", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T11:47:56.375342", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T11:49:05.840410", "level": "INFO", "logger": "app", "module": "main", "line": 87, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T12:18:17.509055", "level": "INFO", "logger": "app", "module": "main", "line": 76, "message": "Validation error | path=/match_result/ | errors=[{'type': 'value_error', 'loc': ('body', 'match_date'), 'msg': 'Value error, Date cannot be in the future', 'input': '2026-01-15', 'ctx': {'error': ValueError('Date cannot be in the future')}}]"}
+{"timestamp": "2026-01-06T12:19:20.253128", "level": "INFO", "logger": "app", "module": "main", "line": 76, "message": "Validation error | path=/match_result/ | errors=[{'type': 'value_error', 'loc': ('body', 'match_date'), 'msg': 'Value error, Date cannot be in the future', 'input': '2026-01-15', 'ctx': {'error': ValueError('Date cannot be in the future')}}]"}
+{"timestamp": "2026-01-06T12:41:45.295971", "level": "INFO", "logger": "app", "module": "main", "line": 90, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T12:41:45.626491", "level": "INFO", "logger": "app", "module": "main", "line": 93, "message": "Match was created successfully between Man City vs West Ham on 2026-01-01"}
+{"timestamp": "2026-01-06T13:40:59.819401", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City  vs West Ham"}
+{"timestamp": "2026-01-06T13:41:43.476331", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City  vs West Ham"}
+{"timestamp": "2026-01-06T13:42:45.978022", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City  vs West Ham"}
+{"timestamp": "2026-01-06T13:44:07.223681", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City  vs West Ham"}
+{"timestamp": "2026-01-06T13:49:41.774830", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City  vs West Ham"}
+{"timestamp": "2026-01-06T13:50:10.382873", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City  vs West Ham"}
+{"timestamp": "2026-01-06T13:51:31.201259", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T13:51:31.207426", "level": "INFO", "logger": "app", "module": "main", "line": 107, "message": "Successfully deleted match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T14:22:58.777260", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T14:26:45.327409", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T14:26:45.401809", "level": "INFO", "logger": "app", "module": "main", "line": 94, "message": "Match was created successfully between Man City vs West Ham on 2026-01-01"}
+{"timestamp": "2026-01-06T14:28:00.210645", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T14:28:00.220694", "level": "INFO", "logger": "app", "module": "main", "line": 107, "message": "Successfully deleted match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T14:32:33.241064", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T14:32:33.253678", "level": "INFO", "logger": "app", "module": "main", "line": 94, "message": "Match was created successfully between Man City vs West Ham on 2026-01-01"}
+{"timestamp": "2026-01-06T14:32:48.767467", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-02 between Man City vs Huhu"}
+{"timestamp": "2026-01-06T14:32:58.365015", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T14:32:58.375860", "level": "INFO", "logger": "app", "module": "main", "line": 107, "message": "Successfully deleted match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T15:16:38.918894", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T15:16:38.992182", "level": "INFO", "logger": "app", "module": "main", "line": 94, "message": "Match was created successfully between Man City vs West Ham on 2026-01-01"}
+{"timestamp": "2026-01-06T15:18:00.494875", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T15:21:55.174098", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T15:26:56.848437", "level": "INFO", "logger": "app", "module": "main", "line": 91, "message": "Match result created for date 2026-01-01"}
+{"timestamp": "2026-01-06T15:28:11.953214", "level": "INFO", "logger": "app", "module": "main", "line": 114, "message": "Update match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T15:28:11.970707", "level": "INFO", "logger": "app", "module": "main", "line": 117, "message": "Successfully updated match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T15:28:44.037133", "level": "INFO", "logger": "app", "module": "main", "line": 104, "message": "Delete match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T15:28:44.041427", "level": "INFO", "logger": "app", "module": "main", "line": 107, "message": "Successfully deleted match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T15:28:52.735568", "level": "INFO", "logger": "app", "module": "main", "line": 114, "message": "Update match on 2026-01-01 between Man City vs West Ham"}
+{"timestamp": "2026-01-06T15:29:30.899461", "level": "INFO", "logger": "app", "module": "main", "line": 134, "message": "list all teams"}
+{"timestamp": "2026-01-06T15:29:41.690407", "level": "INFO", "logger": "app", "module": "main", "line": 134, "message": "list all teams"}
+{"timestamp": "2026-01-06T15:29:41.703256", "level": "INFO", "logger": "app", "module": "main", "line": 140, "message": "Performance data requested for team Man City"}
+{"timestamp": "2026-01-06T15:29:46.950000", "level": "INFO", "logger": "app", "module": "main", "line": 134, "message": "list all teams"}
+{"timestamp": "2026-01-06T15:29:46.964977", "level": "INFO", "logger": "app", "module": "main", "line": 149, "message": "Head to head data for 1 and 2"}
+{"timestamp": "2026-01-06T15:29:55.774626", "level": "INFO", "logger": "app", "module": "main", "line": 134, "message": "list all teams"}

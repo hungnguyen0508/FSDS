@@ -1,0 +1,16 @@
+[0m22:18:38.818256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x789f15949350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x789f15955210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x789f157b8ad0>]}
+
+
+============================== 22:18:38.821205 | 6ebb66e8-4478-4d1b-a5ab-08d155ab4fe4 ==============================
+[0m22:18:38.821205 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:18:38.821671 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'quiet': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'indirect_selection': 'eager', 'log_path': 'logs', 'fail_fast': 'False', 'empty': 'None', 'target_path': 'None', 'introspect': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'printer_width': '80', 'version_check': 'True', 'static_parser': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'profiles_dir': '/home/hung-nguyen/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt clean', 'warn_error': 'None'}
+[0m22:18:38.822371 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/hung-nguyen/Downloads/final_project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:18:38.823440 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": false, "command_wall_clock_time": 0.04500505, "process_in_blocks": "47864", "process_kernel_time": 0.222454, "process_mem_max_rss": "101636", "process_out_blocks": "8", "process_user_time": 0.926895}
+[0m22:18:38.823830 [debug] [MainThread]: Command `dbt clean` failed at 22:18:38.823753 after 0.05 seconds
+[0m22:18:38.824147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x789f15c16990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x789f157b9490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x789f15afad50>]}
+[0m22:18:38.824584 [debug] [MainThread]: Flushing usage events
+[0m22:18:39.735534 [debug] [MainThread]: An error was encountered while trying to flush usage events

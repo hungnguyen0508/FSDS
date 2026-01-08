@@ -1,0 +1,7 @@
+FROM ghcr.io/dbt-labs/dbt-postgres:1.9.1
+
+WORKDIR /dbt
+
+COPY . .
+
+CMD ["dbt", "run"]
