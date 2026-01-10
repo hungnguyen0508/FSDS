@@ -4,7 +4,7 @@
 
 <img width="1546" height="561" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/cd1583da-e6d8-4163-8b61-4acbc46d24a4" />
 
-This project predicts football match outcomes and is structured with a **medallion data engineering workflow**. It consists of:
+This project provides analysis and predicts football match outcomes and is structured with a **medallion data engineering workflow**. It consists of:
 
 - **Database (PostgreSQL)**: stores raw, transformed, and prediction-ready data.  
 - **Data Ingestion Script**: loads raw CSV files into the database.  
@@ -64,12 +64,4 @@ This project uses the following tools:
 - **Makefile**:  
   A build automation tool that defines a set of commands (targets) for repetitive tasks. In this project, Make automates: starting containers, running ingestion, executing dbt transformations, and starting backend/frontend services.  
 
----
 
-## 4. How to Use This Project
-
-1. **Clone the repository**:
-
-```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
