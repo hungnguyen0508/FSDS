@@ -6,7 +6,7 @@ import os
 db_url = os.getenv("DATABASE_URL","postgresql://postgres:meomeomeo123@localhost:5432/football_db")
 
 #engine and session
-engine = create_engine(db_url)
+engine = create_engine(db_url, echo = True)
 SessionLocal = sessionmaker(bind = engine, autoflush=False)
 
 # base 

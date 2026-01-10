@@ -8,7 +8,7 @@ import re
 import pandas as pd
 
 
-DB_URL = os.getenv("Database_URL","postgresql://postgres:meomeomeo123@localhost:5432/football_db")
+DB_URL = "postgresql://postgres:meomeomeo123@localhost:5433/football_db"
 
 # check if the database exists before creating
 if not database_exists(DB_URL):
@@ -137,7 +137,7 @@ def data_ingestion(dir: str):
 
 
 if __name__ == "__main__":
-    input_dir = str(input("Give me link nowwww: "))
+    input_dir = "./raw_data"
     try:
         data_ingestion(input_dir)
         print("Yayyy successfully!")

@@ -3,8 +3,9 @@ import requests
 import pandas as pd 
 from datetime import datetime
 from fe_helper_stat import check_match_goals, find_missing_fields
+import os
 
-Base_URL = "http://0.0.0.0:8080"
+Base_URL = f"http://{os.getenv('backend_env','0.0.0.0')}:8080"
 
 
 # Post match

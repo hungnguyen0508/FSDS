@@ -1,4 +1,4 @@
-From python:3.11.14-slim
+from python:3.11.14-slim
 
 # go to /app 
 workdir /app

@@ -1,9 +1,10 @@
 import streamlit as st 
 import pandas as pd
 import requests 
+import os
 
 
-Base_URL = "http://0.0.0.0:8080"
+Base_URL = f"http://{os.getenv('backend_env','0.0.0.0')}:8080"
 
 
 #/season
