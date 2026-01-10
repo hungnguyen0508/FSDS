@@ -137,7 +137,7 @@ def data_ingestion(dir: str):
 
 
 if __name__ == "__main__":
-    input_dir = "./raw_data"
+    input_dir = "./pipeline/raw_data"
     try:
         data_ingestion(input_dir)
         print("Yayyy successfully!")
