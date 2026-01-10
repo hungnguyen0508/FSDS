@@ -8,7 +8,7 @@ import re
 import pandas as pd
 
 
-DB_URL = "postgresql://postgres:meomeomeo123@localhost:5433/football_db"
+DB_URL = os.getenv("DATABASE_URL")
 
 # check if the database exists before creating
 if not database_exists(DB_URL):
