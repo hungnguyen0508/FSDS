@@ -130,7 +130,7 @@ if st.button("Delete", key = "del"):
 
 
 # Update Match
-st.header("Put EPL football match")
+st.header("Update EPL football match")
 season = st.text_input("Season", key="up_match_season", value = None, placeholder = "Format: YYYY-YY")
 div = st.text_input("Division", key = "up_match_division",value = None,placeholder = "E0 for EPL (sole option)")
 match_date = st.date_input("Match Date", format="YYYY-MM-DD", key = "up_match_Date",value = None)
