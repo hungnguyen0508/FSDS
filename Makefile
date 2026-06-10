@@ -32,6 +32,7 @@ ingest: db
 transformation: ingest 
 	@echo "running dbt full-refresh to transform data..."
 	cd transformation/football_prediction && \
+	dbt seed && \
 	dbt run --full-refresh
 
 backend: transformation
