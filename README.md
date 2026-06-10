@@ -64,5 +64,81 @@ This project uses the following tools:
 - **Makefile**:  
   A build automation tool that defines a set of commands (targets) for repetitive tasks. In this project, Make automates: starting containers, running ingestion, executing dbt transformations, and starting backend/frontend services.
 
+## 4. Getting Started
 
+Follow these step-by-step instructions to clone and start using the Football Prediction Project:
+
+### Step 1: Clone the Repository
+
+Clone the project from GitHub to your local machine:
+
+```bash
+git clone https://github.com/hungnguyen0508/FSDS.git
+cd FSDS
+```
+
+### Step 2: Create a Virtual Environment
+
+Create a Python virtual environment using Conda to isolate project dependencies:
+
+```bash
+conda create --name fsds_env python=3.11.14
+conda activate fsds_env
+```
+
+Alternatively, if you prefer using `venv`:
+
+```bash
+python -m venv fsds_env
+source fsds_env/bin/activate  # On Windows: fsds_env\Scripts\activate
+```
+
+### Step 3: Install Required Packages
+
+Install all project dependencies from the `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install all necessary Python packages including:
+- pandas, numpy (data manipulation)
+- scikit-learn, xgboost (machine learning)
+- sqlalchemy (database ORM)
+- fastapi, uvicorn (backend API)
+- streamlit (frontend)
+- dbt-core, dbt-postgres (data transformation)
+- And other supporting libraries
+
+### Step 4: Run the Makefile Setup
+
+Execute the main setup and initialization commands using the Makefile:
+
+```bash
+make all
+```
+
+This command will automatically:
+1. Start Docker containers (PostgreSQL database, FastAPI backend, Streamlit frontend)
+2. Run the data ingestion script to load raw CSV files into the database
+3. Execute dbt transformations to build Bronze, Silver, and Gold tables
+4. Initialize the machine learning model
+5. Prepare the system for predictions
+
+**Note:** Ensure Docker and Docker Compose are running before executing `make all`.
+
+---
+
+### Next Steps (After Setup)
+
+Once the setup is complete:
+
+- **Access the Streamlit Frontend**: Open your browser and navigate to `http://localhost:8501`
+- **Access the FastAPI Backend**: Visit `http://localhost:8000/docs` for the interactive API documentation
+- **View Database**: Connect to PostgreSQL at `localhost:5432` with credentials from your `.env` file
+- **Check Predictions**: Use the Streamlit interface to input match data and receive predictions
+
+For more details on individual components, refer to their respective documentation in the project folders.
+
+---
 
