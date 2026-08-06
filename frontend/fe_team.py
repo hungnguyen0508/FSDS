@@ -3,12 +3,12 @@ import pandas as pd
 import requests 
 import os
 
-Base_URL = f"http://{os.getenv('backend_env','0.0.0.0')}:8080"
+BASE_URL = f"http://{os.getenv('backend_host','0.0.0.0')}:8080"
 
 
 # information all team
 st.header("Information of all teams")
-response = requests.get(f"{Base_URL}/team/recent_performance")
+response = requests.get(f"{BASE_URL}/team/recent_performance")
 if response.status_code == 200: 
     st.write("Information of all teams")
     st.dataframe(response.json())
@@ -24,7 +24,7 @@ if st.button("Search",key="team_recent_performance"):
     if not team.strip(): 
         st.warning("Please enter a team name")
     else: 
-        response = requests.get(f"{Base_URL}/team/recent_performance/{team}")
+        response = requests.get(f"{BASE_URL}/team/recent_performance/{team}")
         if response.status_code == 200: 
             st.dataframe(pd.DataFrame([response.json()]))
         elif response.status_code == 404: 
@@ -45,7 +45,7 @@ if st.button("Search",key="head_to_head"):
     elif team1 == team2: 
         st.warning("Team IDs must not be equal")
     else:  
-        response = requests.get(f"{Base_URL}/team/head_to_head?first_team={team1}&second_team={team2}")
+        response = requests.get(f"{BASE_URL}/team/head_to_head?first_team={team1}&second_team={team2}")
         if response.status_code == 200: 
             st.dataframe(pd.DataFrame(response.json()))
         elif response.status_code == 404: 

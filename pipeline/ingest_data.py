@@ -6,9 +6,13 @@ from datetime import date
 import os
 import re
 import pandas as pd
+from dotenv import load_dotenv
+from pathlib import Path
 
+env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(env_path)
 
-DB_URL = os.getenv("DATABASE_URL")
+DB_URL = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('POSTGRES_PORT')}/{os.getenv('DB_NAME')}"
 
 # check if the database exists before creating
 if not database_exists(DB_URL):
@@ -18,6 +22,7 @@ engine = create_engine(DB_URL)
 SessionLocal = sessionmaker(bind=engine)
 
 Base = declarative_base()
+
 
 class Match(Base):
     __tablename__ = "matches"
@@ -51,9 +56,8 @@ class Match(Base):
     hr: Mapped[int] = mapped_column(Integer, nullable=True)
     ar: Mapped[int] = mapped_column(Integer, nullable=True)
 
-    __table_args__ = (
-        UniqueConstraint("match_date", "hometeam", "awayteam", "div"),
-    )
+    __table_args__ = (UniqueConstraint("match_date", "hometeam", "awayteam", "div"),)
+
 
 Base.metadata.create_all(engine)
 
@@ -66,7 +70,7 @@ def date_adjusted(date_column: str):
     return date(int(y), int(m), int(d))
 
 
-# load each csv file into postgres 
+# load each csv file into postgres
 def data_ingestion(dir: str):
     session = SessionLocal()
     files = os.listdir(dir)
@@ -128,7 +132,7 @@ def data_ingestion(dir: str):
                         "ay": stmt.excluded.ay,
                         "hr": stmt.excluded.hr,
                         "ar": stmt.excluded.ar,
-                    }
+                    },
                 )
                 session.execute(stmt)
 
